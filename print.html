@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">std</a></li><li class="chapter-item expanded "><div>0.0.1</div></li><li class="spacer"></li><li class="chapter-item expanded "><a href="modules.html">Modules</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="delay.html">delay</a></li></ol></li><li class="chapter-item expanded "><a href="interfaces.html">Interfaces</a></li><li class="chapter-item expanded "><a href="packages.html">Packages</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">std</a></li><li class="chapter-item expanded "><div>0.0.1</div></li><li class="spacer"></li><li class="chapter-item expanded "><a href="modules.html">Modules</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="counter.html">counter</a></li><li class="chapter-item "><a href="delay.html">delay</a></li></ol></li><li class="chapter-item expanded "><a href="interfaces.html">Interfaces</a></li><li class="chapter-item expanded "><a href="packages.html">Packages</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -197,8 +197,14 @@
 <table class="table_list">
 <tbody>
 <tr>
+    <th class="table_list_item"><a href="counter.html">counter</a></th>
+    <td class="table_list_item"> Value counter
+</td>
+</tr>
+<tr>
     <th class="table_list_item"><a href="delay.html">delay</a></th>
-    <td class="table_list_item"></td>
+    <td class="table_list_item"> Delay input by configured cycle
+</td>
 </tr>
 </tbody>
 </table>
@@ -219,23 +225,177 @@
 <table class="table_list">
 <tbody>
 <tr>
+    <th class="table_list_item"><a href="counter.html">counter</a></th>
+    <td class="table_list_item"> Value counter
+</td>
+</tr>
+<tr>
     <th class="table_list_item"><a href="delay.html">delay</a></th>
-    <td class="table_list_item"></td>
+    <td class="table_list_item"> Delay input by configured cycle
+</td>
+</tr>
+</tbody>
+</table>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="counter"><a class="header" href="#counter">counter</a></h2>
+<p>Value counter</p>
+<h3 id="parameters"><a class="header" href="#parameters">Parameters</a></h3>
+<hr />
+<table class="table_list">
+<tbody>
+<tr>
+    <th class="table_list_item">WIDTH</th>
+    <td class="table_list_item"><span class="hljs-type">u32</span></td>
+    <td class="table_list_item"> Counter width
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">MAX_COUNT</th>
+    <td class="table_list_item"><span class="hljs-type">bit&lt;WIDTH&gt;</span></td>
+    <td class="table_list_item"> Max value of counter
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">MIN_COUNT</th>
+    <td class="table_list_item"><span class="hljs-type">bit&lt;WIDTH&gt;</span></td>
+    <td class="table_list_item"> Min value of counter
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">INITIAL_COUNT</th>
+    <td class="table_list_item"><span class="hljs-type">bit&lt;WIDTH&gt;</span></td>
+    <td class="table_list_item"> Initial value of counter
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">WRAP_AROUND</th>
+    <td class="table_list_item"><span class="hljs-type">bit</span></td>
+    <td class="table_list_item"> Whether counter is wrap around
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ports"><a class="header" href="#ports">Ports</a></h3>
+<hr />
+<table class="table_list">
+<tbody>
+<tr>
+    <th class="table_list_item">i_clk</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
+    <td class="table_list_item"> Clock
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">i_rst</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
+    <td class="table_list_item"> Reset
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">i_clear</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
+    <td class="table_list_item"> Clear counter
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">i_set</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
+    <td class="table_list_item"> Set counter to a value
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">i_set_value</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">COUNT</span></td>
+    <td class="table_list_item"> Value used by i_set
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">i_up</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
+    <td class="table_list_item"> Count up
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">i_down</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
+    <td class="table_list_item"> Count down
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">o_count</th>
+    <td class="table_list_item"><span class="hljs-keyword">output</span> <span class="hljs-type">COUNT</span></td>
+    <td class="table_list_item"> Count value
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">o_count_next</th>
+    <td class="table_list_item"><span class="hljs-keyword">output</span> <span class="hljs-type">COUNT</span></td>
+    <td class="table_list_item"> Count value for the next clock cycle
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">o_wrap_around</th>
+    <td class="table_list_item"><span class="hljs-keyword">output</span> <span class="hljs-type">logic</span></td>
+    <td class="table_list_item"> Indicator for wrap around
+</td>
 </tr>
 </tbody>
 </table>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="delay"><a class="header" href="#delay">delay</a></h2>
-<h3 id="parameters"><a class="header" href="#parameters">Parameters</a></h3>
+<p>Delay input by configured cycle</p>
+<h3 id="parameters-1"><a class="header" href="#parameters-1">Parameters</a></h3>
 <hr />
-<h4 id="delay-u32"><a class="header" href="#delay-u32">DELAY: <span class="hljs-type">u32</span></a></h4>
-<h4 id="width-u32"><a class="header" href="#width-u32">WIDTH: <span class="hljs-type">u32</span></a></h4>
-<h4 id="type-type"><a class="header" href="#type-type">TYPE: <span class="hljs-type">type</span></a></h4>
-<h3 id="ports"><a class="header" href="#ports">Ports</a></h3>
+<table class="table_list">
+<tbody>
+<tr>
+    <th class="table_list_item">DELAY</th>
+    <td class="table_list_item"><span class="hljs-type">u32</span></td>
+    <td class="table_list_item"> Clock cycle of delay
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">WIDTH</th>
+    <td class="table_list_item"><span class="hljs-type">u32</span></td>
+    <td class="table_list_item"> Input/output data width
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">TYPE</th>
+    <td class="table_list_item"><span class="hljs-type">type</span></td>
+    <td class="table_list_item"> Input/output data type
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ports-1"><a class="header" href="#ports-1">Ports</a></h3>
 <hr />
-<h4 id="i_clk-input-logic"><a class="header" href="#i_clk-input-logic">i_clk: <span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></a></h4>
-<h4 id="i_rst_n-input-logic"><a class="header" href="#i_rst_n-input-logic">i_rst_n: <span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></a></h4>
-<h4 id="i_d-input-type"><a class="header" href="#i_d-input-type">i_d: <span class="hljs-keyword">input</span> <span class="hljs-type">TYPE</span></a></h4>
-<h4 id="o_d-output-type"><a class="header" href="#o_d-output-type">o_d: <span class="hljs-keyword">output</span> <span class="hljs-type">TYPE</span></a></h4>
+<table class="table_list">
+<tbody>
+<tr>
+    <th class="table_list_item">i_clk</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
+    <td class="table_list_item"> Clock
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">i_rst</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
+    <td class="table_list_item"> Reset
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">i_d</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">TYPE</span></td>
+    <td class="table_list_item"> Input
+</td>
+</tr>
+<tr>
+    <th class="table_list_item">o_d</th>
+    <td class="table_list_item"><span class="hljs-keyword">output</span> <span class="hljs-type">TYPE</span></td>
+    <td class="table_list_item"> Output
+</td>
+</tr>
+</tbody>
+</table>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="interfaces-1"><a class="header" href="#interfaces-1">Interfaces</a></h2>
 <hr />
 <table class="table_list">
