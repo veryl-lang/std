@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title></title>
-        <meta name="robots" content="noindex">
+        <title>lfsr_galois</title>
 
 
         <!-- Custom HTML head -->
@@ -89,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">std</a></li><li class="chapter-item expanded "><div>0.0.1</div></li><li class="spacer"></li><li class="chapter-item expanded "><a href="modules.html">Modules</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="counter.html">counter</a></li><li class="chapter-item "><a href="delay.html">delay</a></li><li class="chapter-item "><a href="lfsr_galois.html">lfsr_galois</a></li></ol></li><li class="chapter-item expanded "><a href="interfaces.html">Interfaces</a></li><li class="chapter-item expanded "><a href="packages.html">Packages</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">std</a></li><li class="chapter-item expanded "><div>0.0.1</div></li><li class="spacer"></li><li class="chapter-item expanded "><a href="modules.html">Modules</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="counter.html">counter</a></li><li class="chapter-item "><a href="delay.html">delay</a></li><li class="chapter-item expanded "><a href="lfsr_galois.html" class="active">lfsr_galois</a></li></ol></li><li class="chapter-item expanded "><a href="interfaces.html">Interfaces</a></li><li class="chapter-item expanded "><a href="packages.html">Packages</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -174,238 +173,8 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="std"><a class="header" href="#std">std</a></h1>
-<p>Veryl Standard Library</p>
-<table align="center" class="table_list">
-<tbody>
-<tr>
-    <th class="table_list_item">Version</th>
-    <td class="table_list_item">0.0.1</td>
-</tr>
-<tr>
-    <th class="table_list_item">Repository</th>
-    <td class="table_list_item"><a href="https://github.com/veryl-lang/std">https://github.com/veryl-lang/std</a></td>
-</tr>
-<tr>
-    <th class="table_list_item">License</th>
-    <td class="table_list_item">MIT OR Apache-2.0</td>
-</tr>
-</tbody>
-</table>
-<h2 id="modules"><a class="header" href="#modules">Modules</a></h2>
-<hr />
-<table class="table_list">
-<tbody>
-<tr>
-    <th class="table_list_item"><a href="counter.html">counter</a></th>
-    <td class="table_list_item"> Value counter
-</td>
-</tr>
-<tr>
-    <th class="table_list_item"><a href="delay.html">delay</a></th>
-    <td class="table_list_item"> Delay input by configured cycle
-</td>
-</tr>
-<tr>
-    <th class="table_list_item"><a href="lfsr_galois.html">lfsr_galois</a></th>
-    <td class="table_list_item"></td>
-</tr>
-</tbody>
-</table>
-<h2 id="interfaces"><a class="header" href="#interfaces">Interfaces</a></h2>
-<hr />
-<table class="table_list">
-<tbody>
-</tbody>
-</table>
-<h2 id="packages"><a class="header" href="#packages">Packages</a></h2>
-<hr />
-<table class="table_list">
-<tbody>
-</tbody>
-</table>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="modules-1"><a class="header" href="#modules-1">Modules</a></h2>
-<hr />
-<table class="table_list">
-<tbody>
-<tr>
-    <th class="table_list_item"><a href="counter.html">counter</a></th>
-    <td class="table_list_item"> Value counter
-</td>
-</tr>
-<tr>
-    <th class="table_list_item"><a href="delay.html">delay</a></th>
-    <td class="table_list_item"> Delay input by configured cycle
-</td>
-</tr>
-<tr>
-    <th class="table_list_item"><a href="lfsr_galois.html">lfsr_galois</a></th>
-    <td class="table_list_item"></td>
-</tr>
-</tbody>
-</table>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="counter"><a class="header" href="#counter">counter</a></h2>
-<p>Value counter</p>
+                        <h2 id="lfsr_galois"><a class="header" href="#lfsr_galois">lfsr_galois</a></h2>
 <h3 id="parameters"><a class="header" href="#parameters">Parameters</a></h3>
-<hr />
-<table class="table_list">
-<tbody>
-<tr>
-    <th class="table_list_item">WIDTH</th>
-    <td class="table_list_item"><span class="hljs-type">u32</span></td>
-    <td class="table_list_item"> Counter width
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">MAX_COUNT</th>
-    <td class="table_list_item"><span class="hljs-type">bit&lt;WIDTH&gt;</span></td>
-    <td class="table_list_item"> Max value of counter
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">MIN_COUNT</th>
-    <td class="table_list_item"><span class="hljs-type">bit&lt;WIDTH&gt;</span></td>
-    <td class="table_list_item"> Min value of counter
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">INITIAL_COUNT</th>
-    <td class="table_list_item"><span class="hljs-type">bit&lt;WIDTH&gt;</span></td>
-    <td class="table_list_item"> Initial value of counter
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">WRAP_AROUND</th>
-    <td class="table_list_item"><span class="hljs-type">bit</span></td>
-    <td class="table_list_item"> Whether counter is wrap around
-</td>
-</tr>
-</tbody>
-</table>
-<h3 id="ports"><a class="header" href="#ports">Ports</a></h3>
-<hr />
-<table class="table_list">
-<tbody>
-<tr>
-    <th class="table_list_item">i_clk</th>
-    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
-    <td class="table_list_item"> Clock
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">i_rst</th>
-    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
-    <td class="table_list_item"> Reset
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">i_clear</th>
-    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
-    <td class="table_list_item"> Clear counter
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">i_set</th>
-    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
-    <td class="table_list_item"> Set counter to a value
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">i_set_value</th>
-    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">COUNT</span></td>
-    <td class="table_list_item"> Value used by i_set
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">i_up</th>
-    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
-    <td class="table_list_item"> Count up
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">i_down</th>
-    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
-    <td class="table_list_item"> Count down
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">o_count</th>
-    <td class="table_list_item"><span class="hljs-keyword">output</span> <span class="hljs-type">COUNT</span></td>
-    <td class="table_list_item"> Count value
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">o_count_next</th>
-    <td class="table_list_item"><span class="hljs-keyword">output</span> <span class="hljs-type">COUNT</span></td>
-    <td class="table_list_item"> Count value for the next clock cycle
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">o_wrap_around</th>
-    <td class="table_list_item"><span class="hljs-keyword">output</span> <span class="hljs-type">logic</span></td>
-    <td class="table_list_item"> Indicator for wrap around
-</td>
-</tr>
-</tbody>
-</table>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="delay"><a class="header" href="#delay">delay</a></h2>
-<p>Delay input by configured cycle</p>
-<h3 id="parameters-1"><a class="header" href="#parameters-1">Parameters</a></h3>
-<hr />
-<table class="table_list">
-<tbody>
-<tr>
-    <th class="table_list_item">DELAY</th>
-    <td class="table_list_item"><span class="hljs-type">u32</span></td>
-    <td class="table_list_item"> Clock cycle of delay
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">WIDTH</th>
-    <td class="table_list_item"><span class="hljs-type">u32</span></td>
-    <td class="table_list_item"> Input/output data width
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">TYPE</th>
-    <td class="table_list_item"><span class="hljs-type">type</span></td>
-    <td class="table_list_item"> Input/output data type
-</td>
-</tr>
-</tbody>
-</table>
-<h3 id="ports-1"><a class="header" href="#ports-1">Ports</a></h3>
-<hr />
-<table class="table_list">
-<tbody>
-<tr>
-    <th class="table_list_item">i_clk</th>
-    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
-    <td class="table_list_item"> Clock
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">i_rst</th>
-    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
-    <td class="table_list_item"> Reset
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">i_d</th>
-    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">TYPE</span></td>
-    <td class="table_list_item"> Input
-</td>
-</tr>
-<tr>
-    <th class="table_list_item">o_d</th>
-    <td class="table_list_item"><span class="hljs-keyword">output</span> <span class="hljs-type">TYPE</span></td>
-    <td class="table_list_item"> Output
-</td>
-</tr>
-</tbody>
-</table>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="lfsr_galois"><a class="header" href="#lfsr_galois">lfsr_galois</a></h2>
-<h3 id="parameters-2"><a class="header" href="#parameters-2">Parameters</a></h3>
 <hr />
 <table class="table_list">
 <tbody>
@@ -424,7 +193,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="ports-2"><a class="header" href="#ports-2">Ports</a></h3>
+<h3 id="ports"><a class="header" href="#ports">Ports</a></h3>
 <hr />
 <table class="table_list">
 <tbody>
@@ -460,24 +229,18 @@
 </tr>
 </tbody>
 </table>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="interfaces-1"><a class="header" href="#interfaces-1">Interfaces</a></h2>
-<hr />
-<table class="table_list">
-<tbody>
-</tbody>
-</table>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="packages-1"><a class="header" href="#packages-1">Packages</a></h2>
-<hr />
-<table class="table_list">
-<tbody>
-</tbody>
-</table>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="delay.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
+                            <a rel="next prefetch" href="interfaces.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -485,7 +248,13 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="delay.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
+                    <a rel="next prefetch" href="interfaces.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
@@ -508,11 +277,6 @@
 
         <!-- Custom JS scripts -->
 
-        <script>
-        window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
-        });
-        </script>
 
     </div>
     </body>
