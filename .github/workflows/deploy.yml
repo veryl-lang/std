@@ -12,12 +12,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-      - uses: Swatinem/rust-cache@v2
-      - name: Build veryl
-        run: cargo install --git https://github.com/veryl-lang/veryl veryl
+      - name: Setup veryl
+        uses: veryl-lang/setup-veryl@v1
       - name: Build doc
         run: veryl doc
       - name: Deploy
