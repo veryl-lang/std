@@ -40,7 +40,7 @@ module lfsr_galois_bench #(parameter SIZE=64) (input i_clk, output logic done, o
   logic [SIZE-1:0] i_setval;
   logic [SIZE-1:0] o_val;
 
-  stochastic_computing_lfsr_galois #(.SIZE(SIZE)) dut (.*);
+  std_lfsr_galois #(.SIZE(SIZE)) dut (.*);
 
 
   default clocking
