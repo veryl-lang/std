@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Modules</title>
+        <title>binary_encoder</title>
 
 
         <!-- Custom HTML head -->
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">std</a></li><li class="chapter-item expanded "><div>0.0.1</div></li><li class="spacer"></li><li class="chapter-item expanded "><a href="modules.html" class="active">Modules</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="bin2gray.html">bin2gray</a></li><li class="chapter-item "><a href="binary_decoder.html">binary_decoder</a></li><li class="chapter-item "><a href="binary_encoder.html">binary_encoder</a></li><li class="chapter-item "><a href="counter.html">counter</a></li><li class="chapter-item "><a href="delay.html">delay</a></li><li class="chapter-item "><a href="gray2bin.html">gray2bin</a></li><li class="chapter-item "><a href="gray_counter.html">gray_counter</a></li><li class="chapter-item "><a href="lfsr_galois.html">lfsr_galois</a></li></ol></li><li class="chapter-item expanded "><a href="interfaces.html">Interfaces</a></li><li class="chapter-item expanded "><a href="packages.html">Packages</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">std</a></li><li class="chapter-item expanded "><div>0.0.1</div></li><li class="spacer"></li><li class="chapter-item expanded "><a href="modules.html">Modules</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="bin2gray.html">bin2gray</a></li><li class="chapter-item "><a href="binary_decoder.html">binary_decoder</a></li><li class="chapter-item expanded "><a href="binary_encoder.html" class="active">binary_encoder</a></li><li class="chapter-item "><a href="counter.html">counter</a></li><li class="chapter-item "><a href="delay.html">delay</a></li><li class="chapter-item "><a href="gray2bin.html">gray2bin</a></li><li class="chapter-item "><a href="gray_counter.html">gray_counter</a></li><li class="chapter-item "><a href="lfsr_galois.html">lfsr_galois</a></li></ol></li><li class="chapter-item expanded "><a href="interfaces.html">Interfaces</a></li><li class="chapter-item expanded "><a href="packages.html">Packages</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -173,48 +173,42 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="modules"><a class="header" href="#modules">Modules</a></h2>
+                        <h2 id="binary_encoder"><a class="header" href="#binary_encoder">binary_encoder</a></h2>
+<p>A binary encoder.
+Transforms a unary encoded value into a binary encoding.</p>
+<h3 id="parameters"><a class="header" href="#parameters">Parameters</a></h3>
 <hr />
 <table class="table_list">
 <tbody>
 <tr>
-    <th class="table_list_item"><a href="bin2gray.html">bin2gray</a></th>
-    <td class="table_list_item"> Converts a binary encoded bit vector to a Gray encoded bit-vector
+    <th class="table_list_item">UNARY_WIDTH</th>
+    <td class="table_list_item"><span class="hljs-type">u32</span></td>
+    <td class="table_list_item"> Width of the input unary vector
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ports"><a class="header" href="#ports">Ports</a></h3>
+<hr />
+<table class="table_list">
+<tbody>
+<tr>
+    <th class="table_list_item">i_en</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic</span></td>
+    <td class="table_list_item"> Enable Signal.  Dynamic power is minimzed when not enabled.
 </td>
 </tr>
 <tr>
-    <th class="table_list_item"><a href="binary_decoder.html">binary_decoder</a></th>
-    <td class="table_list_item"> A binary decoder.
+    <th class="table_list_item">i_unary</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-type">logic&lt;UNARY_WIDTH&gt;</span></td>
+    <td class="table_list_item"> Unary encoded input.
 </td>
 </tr>
 <tr>
-    <th class="table_list_item"><a href="binary_encoder.html">binary_encoder</a></th>
-    <td class="table_list_item"> A binary encoder.
+    <th class="table_list_item">o_bin</th>
+    <td class="table_list_item"><span class="hljs-keyword">output</span> <span class="hljs-type">logic&lt;BIN_WIDTH&gt;</span></td>
+    <td class="table_list_item"> Binary encoded output.
 </td>
-</tr>
-<tr>
-    <th class="table_list_item"><a href="counter.html">counter</a></th>
-    <td class="table_list_item"> Value counter
-</td>
-</tr>
-<tr>
-    <th class="table_list_item"><a href="delay.html">delay</a></th>
-    <td class="table_list_item"> Delay input by configured cycle
-</td>
-</tr>
-<tr>
-    <th class="table_list_item"><a href="gray2bin.html">gray2bin</a></th>
-    <td class="table_list_item"> Converts a Gray encoded bit vector to a binary encoded bit-vector
-</td>
-</tr>
-<tr>
-    <th class="table_list_item"><a href="gray_counter.html">gray_counter</a></th>
-    <td class="table_list_item"> Value counter using Gray Encoding
-</td>
-</tr>
-<tr>
-    <th class="table_list_item"><a href="lfsr_galois.html">lfsr_galois</a></th>
-    <td class="table_list_item"></td>
 </tr>
 </tbody>
 </table>
@@ -223,11 +217,11 @@
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="binary_decoder.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="bin2gray.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="counter.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -237,11 +231,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="binary_decoder.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="bin2gray.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="counter.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
