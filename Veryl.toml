@@ -11,3 +11,9 @@ target = {type = "directory", path = "target/src"}
 
 [doc]
 path = "target/doc"
+
+[test.vcs]
+compile_args = ["-full64"]
+
+[test.verilator]
+compile_args = ["-Wno-MULTIDRIVEN", "-Wno-WIDTHTRUNC", "-Wno-WIDTHEXPAND"]
