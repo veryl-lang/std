@@ -17,3 +17,13 @@ jobs:
         run: veryl fmt --check
       - name: Build check
         run: veryl check
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup veryl
+        uses: veryl-lang/setup-veryl@v1
+      - name: Setup verilator
+        uses: veryl-lang/setup-verilator@v1
+      - name: Test
+        run: veryl test --sim verilator
