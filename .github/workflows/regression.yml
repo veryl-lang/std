@@ -25,6 +25,6 @@ jobs:
         uses: veryl-lang/setup-veryl@v1
       - name: Setup verilator
         uses: veryl-lang/setup-verilator@v1
-      - run: sudo apt-get install -y ccache
+      - run: sudo apt-get install -y gcc
       - name: Test
         run: veryl test --sim verilator --verbose
