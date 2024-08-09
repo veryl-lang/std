@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Packages</title>
+        <title>ram</title>
 
 
         <!-- Custom HTML head -->
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">std</a></li><li class="chapter-item expanded "><div>0.0.1</div></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded "><a href="modules.html">Modules</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="async_fifo.html">async_fifo</a></li><li class="chapter-item "><a href="async_handshake.html">async_handshake</a></li><li class="chapter-item "><a href="bin2gray.html">bin2gray</a></li><li class="chapter-item "><a href="binary_decoder.html">binary_decoder</a></li><li class="chapter-item "><a href="binary_encoder.html">binary_encoder</a></li><li class="chapter-item "><a href="counter.html">counter</a></li><li class="chapter-item "><a href="delay.html">delay</a></li><li class="chapter-item "><a href="edge_detector.html">edge_detector</a></li><li class="chapter-item "><a href="fifo.html">fifo</a></li><li class="chapter-item "><a href="gray2bin.html">gray2bin</a></li><li class="chapter-item "><a href="gray_counter.html">gray_counter</a></li><li class="chapter-item "><a href="lfsr_galois.html">lfsr_galois</a></li><li class="chapter-item "><a href="ram.html">ram</a></li></ol></li><li class="chapter-item expanded "><a href="interfaces.html">Interfaces</a></li><li class="chapter-item expanded "><a href="packages.html" class="active">Packages</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">std</a></li><li class="chapter-item expanded "><div>0.0.1</div></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded "><a href="modules.html">Modules</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="async_fifo.html">async_fifo</a></li><li class="chapter-item "><a href="async_handshake.html">async_handshake</a></li><li class="chapter-item "><a href="bin2gray.html">bin2gray</a></li><li class="chapter-item "><a href="binary_decoder.html">binary_decoder</a></li><li class="chapter-item "><a href="binary_encoder.html">binary_encoder</a></li><li class="chapter-item "><a href="counter.html">counter</a></li><li class="chapter-item "><a href="delay.html">delay</a></li><li class="chapter-item "><a href="edge_detector.html">edge_detector</a></li><li class="chapter-item "><a href="fifo.html">fifo</a></li><li class="chapter-item "><a href="gray2bin.html">gray2bin</a></li><li class="chapter-item "><a href="gray_counter.html">gray_counter</a></li><li class="chapter-item "><a href="lfsr_galois.html">lfsr_galois</a></li><li class="chapter-item expanded "><a href="ram.html" class="active">ram</a></li></ol></li><li class="chapter-item expanded "><a href="interfaces.html">Interfaces</a></li><li class="chapter-item expanded "><a href="packages.html">Packages</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -173,10 +173,102 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="packages"><a class="header" href="#packages">Packages</a></h2>
+                        <h2 id="ram"><a class="header" href="#ram">ram</a></h2>
+<h3 id="parameters"><a class="header" href="#parameters">Parameters</a></h3>
 <hr />
 <table class="table_list">
 <tbody>
+<tr>
+    <th class="table_list_item">WORD_SIZE</th>
+    <td class="table_list_item"><span class="hljs-type">u32</span></td>
+    <td class="table_list_item"></td>
+</tr>
+<tr>
+    <th class="table_list_item">ADDRESS_WIDTH</th>
+    <td class="table_list_item"><span class="hljs-type">u32</span></td>
+    <td class="table_list_item"></td>
+</tr>
+<tr>
+    <th class="table_list_item">DATA_WIDTH</th>
+    <td class="table_list_item"><span class="hljs-type">u32</span></td>
+    <td class="table_list_item"></td>
+</tr>
+<tr>
+    <th class="table_list_item">DATA_TYPE</th>
+    <td class="table_list_item"><span class="hljs-type">type</span></td>
+    <td class="table_list_item"></td>
+</tr>
+<tr>
+    <th class="table_list_item">BUFFER_OUT</th>
+    <td class="table_list_item"><span class="hljs-type">bit</span></td>
+    <td class="table_list_item"></td>
+</tr>
+<tr>
+    <th class="table_list_item">USE_RESET</th>
+    <td class="table_list_item"><span class="hljs-type">bit</span></td>
+    <td class="table_list_item"></td>
+</tr>
+<tr>
+    <th class="table_list_item">INITIAL_VALUE</th>
+    <td class="table_list_item"><span class="hljs-type">DATA_TYPE</span></td>
+    <td class="table_list_item"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ports"><a class="header" href="#ports">Ports</a></h3>
+<hr />
+<table class="table_list">
+<tbody>
+<tr>
+    <th class="table_list_item">i_clk</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-attribute"></span> <span class="hljs-type">clock</span></td>
+    <td class="table_list_item"></td>
+</tr>
+<tr>
+    <th class="table_list_item">i_rst</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-attribute"></span> <span class="hljs-type">reset</span></td>
+    <td class="table_list_item"></td>
+</tr>
+<tr>
+    <th class="table_list_item">i_clr</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-attribute"></span> <span class="hljs-type">logic</span></td>
+    <td class="table_list_item"></td>
+</tr>
+<tr>
+    <th class="table_list_item">i_mea</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-attribute"></span> <span class="hljs-type">logic</span></td>
+    <td class="table_list_item"></td>
+</tr>
+<tr>
+    <th class="table_list_item">i_wea</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-attribute"></span> <span class="hljs-type">logic</span></td>
+    <td class="table_list_item"></td>
+</tr>
+<tr>
+    <th class="table_list_item">i_adra</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-attribute"></span> <span class="hljs-type">logic<ADDRESS_WIDTH></span></td>
+    <td class="table_list_item"></td>
+</tr>
+<tr>
+    <th class="table_list_item">i_da</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-attribute"></span> <span class="hljs-type">DATA_TYPE</span></td>
+    <td class="table_list_item"></td>
+</tr>
+<tr>
+    <th class="table_list_item">i_meb</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-attribute"></span> <span class="hljs-type">logic</span></td>
+    <td class="table_list_item"></td>
+</tr>
+<tr>
+    <th class="table_list_item">i_adrb</th>
+    <td class="table_list_item"><span class="hljs-keyword">input</span> <span class="hljs-attribute"></span> <span class="hljs-type">logic<ADDRESS_WIDTH></span></td>
+    <td class="table_list_item"></td>
+</tr>
+<tr>
+    <th class="table_list_item">o_qb</th>
+    <td class="table_list_item"><span class="hljs-keyword">output</span> <span class="hljs-attribute"></span> <span class="hljs-type">DATA_TYPE</span></td>
+    <td class="table_list_item"></td>
+</tr>
 </tbody>
 </table>
 
@@ -184,10 +276,13 @@
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="interfaces.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="lfsr_galois.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
+                            <a rel="next prefetch" href="interfaces.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -195,10 +290,13 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="interfaces.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="lfsr_galois.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
+                    <a rel="next prefetch" href="interfaces.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
