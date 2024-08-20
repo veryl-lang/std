@@ -12,6 +12,9 @@ target = {type = "directory", path = "target/src"}
 [doc]
 path = "target/doc"
 
+[test]
+waveform_target = {type = "directory", path = "target/wave"}
+
 [test.vcs]
 compile_args = ["-full64"]
 
